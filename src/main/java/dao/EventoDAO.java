@@ -38,6 +38,8 @@ public class EventoDAO {
 			em.remove(found);
 			transaction.commit();
 			Application.logger.info("Evento con id " + id + " eliminato!");
+		} else {
+			Application.logger.info("Evento con id " + id + " non trovato!");
 		}
 	}
 
