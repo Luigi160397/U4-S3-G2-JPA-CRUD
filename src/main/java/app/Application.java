@@ -6,17 +6,16 @@ import java.util.UUID;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import dao.EventoDAO;
 import entities.Evento;
 import entities.TipoEvento;
+import lombok.extern.slf4j.Slf4j;
 import utils.JpaUtil;
+
+@Slf4j
 
 public class Application {
 
-	public static Logger logger = LoggerFactory.getLogger(Application.class);
 	private static EntityManagerFactory emf = JpaUtil.getEntityManagerFactory();
 
 	public static void main(String[] args) {
@@ -34,10 +33,10 @@ public class Application {
 		ed.delete(UUID.fromString("401faecd-8d23-4345-b6e0-53da813cee43"));
 
 		if (trovato != null) {
-			logger.info("_________ Evento trovato: _________");
-			logger.info("" + trovato);
+			log.info("_________ Evento trovato: _________");
+			log.info("" + trovato);
 		} else {
-			logger.info("Evento non trovato con id: " + id);
+			log.info("Evento non trovato con id: " + id);
 		}
 
 		ed.refresh(id, "Test");
