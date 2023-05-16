@@ -34,7 +34,7 @@ public class Application {
 		ed.delete(UUID.fromString("401faecd-8d23-4345-b6e0-53da813cee43"));
 
 		if (trovato != null) {
-
+			logger.info("_________ Evento trovato: _________");
 			logger.info("" + trovato);
 		} else {
 			logger.info("Evento non trovato con id: " + id);
