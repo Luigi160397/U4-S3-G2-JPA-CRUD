@@ -23,9 +23,9 @@ public class Application {
 		EntityManager em = emf.createEntityManager();
 		EventoDAO ed = new EventoDAO(em);
 
-		Evento e1 = new Evento("Compleanno", LocalDate.of(2000, 8, 15), "bello", TipoEvento.PUBBLICO, 1000);
+		Evento e1 = new Evento("Compleanno", LocalDate.of(2000, 8, 15), "bello", TipoEvento.PRIVATO, 1000);
 
-//		ed.save(e1);
+		ed.save(e1);
 
 		UUID id = UUID.fromString("0485c570-8046-4252-ae66-8c9e57749ac0");
 
