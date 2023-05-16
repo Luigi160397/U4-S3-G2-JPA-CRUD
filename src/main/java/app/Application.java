@@ -23,15 +23,15 @@ public class Application {
 		EntityManager em = emf.createEntityManager();
 		EventoDAO ed = new EventoDAO(em);
 
-		Evento e1 = new Evento("Compleanno", LocalDate.of(2000, 8, 15), "bello", TipoEvento.PRIVATO, 1000);
+		Evento e1 = new Evento("FestivalBar", LocalDate.of(2000, 8, 15), "bello", TipoEvento.PUBBLICO, 1000);
 
 		ed.save(e1);
 
-		UUID id = UUID.fromString("0485c570-8046-4252-ae66-8c9e57749ac0");
+		UUID id = UUID.fromString("08157a01-3067-48c2-b9b0-af6dc4be88d4");
 
 		Evento trovato = ed.getById(id);
 
-		ed.delete(UUID.fromString("43043b8b-f586-4519-8e65-46afb9329e01"));
+		ed.delete(UUID.fromString("401faecd-8d23-4345-b6e0-53da813cee43"));
 
 		if (trovato != null) {
 
